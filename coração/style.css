@@ -184,6 +184,6 @@ body {
     }
 
     .texto{
-        animation: pulse2 .4s infinite;
+        animation: pulse2 2s infinite;
     }
 }
