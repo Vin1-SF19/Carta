@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Coração Pulsante</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="heart"></div>
+
+    <section class="container">
+
+        <div class="texto">
+            <div class="styleText">
+                <div class="imgs">
+                    <img class="coracao" src="imgs/10009769.png">
+                </div>
+                <label>
+                    Meu amor</br>
+
+                    Eu não sou o melhor com palavras, mas hoje eu não poderia deixar de escrever algo pra você.
+
+                    Quero aproveitar o Dia das Mulheres pra lembrar o quanto você é incrível. Você não é só a mulher da
+                    minha vida, mas também alguém que me inspira todos os dias. Sua força, seu jeito, suas manias – tudo
+                    em você faz minha vida melhor.
+
+                    Eu posso não dizer isso sempre do jeito certo, mas quero que saiba que te admiro, te respeito e,
+                    acima de tudo, te amo. Obrigado por ser essa mulher incrível, por estar ao meu lado e por fazer
+                    parte da minha vida.
+
+                    Feliz Dia das Mulheres, meu amor. Você merece o mundo! 💙</label>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+<script>
+
+    const pulsar = document.querySelector('.heart');
+    var carta = document.querySelector('.texto');
+
+
+
+    pulsar.addEventListener('click', () => {
+        pulsar.style.display = 'none';
+        carta.style.display = 'block';
+
+    })
+</script>
+
+</html>

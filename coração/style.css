@@ -1,0 +1,189 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffebee;
+    margin: 0;
+    width: 100%;
+
+    font-family: "Dancing Script", cursive;
+    font-size: 20px;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+/* Coração principal */
+.heart {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background-color: red;
+    transform: rotate(-45deg);
+    animation: pulse 1s infinite;
+    cursor: pointer;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -125px;
+    left: 0;
+}
+
+.heart::after {
+    left: 125px;
+    top: 0;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Texto e caixa de mensagem */
+.texto {
+    display: none;
+    width: 90%;
+    max-width: 390px;
+    min-height: 200px;
+    background-color: #ffebee;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid red;
+    background-image: url(/imgs/textura-de-papel-amassado-de-fundo_937226-273.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: fadeIn 1s ease;
+    position: relative;
+    z-index: 1; /* Mantém o texto acima */
+}
+
+/* Coração maior fora da box */
+.styleText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.styleText .imgs {
+    position: absolute;
+    top: -120px; /* Move o coração para cima da box */
+    left: -50%;
+    transform: translateX(-50%);
+    z-index: 0; /* Mantém atrás do texto */
+}
+
+.styleText .imgs .coracao {
+    width: 720px; 
+    position: absolute;
+    top: -50px;
+    animation: pulse2 1s infinite;
+}
+
+/* Animações */
+@keyframes pulse {
+    0% { transform: scale(1) rotate(-45deg); }
+    50% { transform: scale(1.1) rotate(-45deg); }
+    100% { transform: scale(1) rotate(-45deg); }
+}
+
+@keyframes pulse2 {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+    .heart {
+        width: 150px;
+        height: 150px;
+    }
+
+    .heart::before,
+    .heart::after {
+        width: 150px;
+        height: 150px;
+    }
+
+    .heart::before { top: -75px; }
+    .heart::after { left: 75px; }
+
+    .styleText .imgs {
+        top: -100px; /* Mantém o coração fora da box */
+    }
+
+    .styleText .imgs .coracao {
+        left: 110px;
+        top: -50px;
+        width: 520px; /* Ajusta tamanho do coração */
+    }
+
+    .texto {
+        width: 90%;
+        font-size: 14px;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .heart {
+        width: 120px;
+        height: 120px;
+    }
+
+    .heart::before,
+    .heart::after {
+        width: 120px;
+        height: 120px;
+    }
+
+    .heart::before { top: -60px; }
+    .heart::after { left: 60px; }
+
+    .styleText .imgs {
+        top: -80px; /* Ajuste para telas menores */
+    }
+
+    .styleText .imgs .coracao {
+        display: none;
+
+    }
+
+    .texto{
+        animation: pulse2 1s infinite
+    }
+}
